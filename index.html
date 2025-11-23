@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Social Media - Feed</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="logo">Mini Social Media</h1>
+            <div class="header-actions">
+                <span id="welcomeMessage" class="welcome-message"></span>
+                <button id="themeToggle" class="btn btn-icon" title="Toggle theme">
+                    <span id="themeIcon">🌙</span>
+                </button>
+                <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-container">
+        <!-- Create Post Section -->
+        <section class="create-post-section">
+            <div class="card">
+                <h2>Create Post</h2>
+                <form id="createPostForm" class="post-form">
+                    <div class="form-group">
+                        <textarea 
+                            id="postText" 
+                            placeholder="What's on your mind?" 
+                            rows="4"
+                            required
+                        ></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input 
+                            type="url" 
+                            id="postImageUrl" 
+                            placeholder="Image URL (optional)"
+                            class="image-url-input"
+                        >
+                    </div>
+                    <button type="submit" class="btn btn-primary">Post</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Search and Sort Section -->
+        <section class="controls-section">
+            <div class="card">
+                <div class="controls-grid">
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="searchInput" 
+                            placeholder="Search posts..." 
+                            class="search-input"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <select id="sortSelect" class="sort-select">
+                            <option value="latest">Latest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="mostLiked">Most Liked</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Posts Feed -->
+        <section class="posts-section">
+            <div id="postsContainer" class="posts-container">
+                <!-- Posts will be dynamically inserted here -->
+            </div>
+            <div id="noPostsMessage" class="no-posts-message" style="display: none;">
+                <p>No posts found. Create your first post above!</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Edit Post Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Edit Post</h2>
+            <form id="editPostForm" class="post-form">
+                <div class="form-group">
+                    <textarea 
+                        id="editPostText" 
+                        placeholder="Edit your post..." 
+                        rows="4"
+                        required
+                    ></textarea>
+                </div>
+                <div class="form-group">
+                    <input 
+                        type="url" 
+                        id="editPostImageUrl" 
+                        placeholder="Image URL (optional)"
+                        class="image-url-input"
+                    >
+                </div>
+                <button type="submit" class="btn btn-primary">Update Post</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
